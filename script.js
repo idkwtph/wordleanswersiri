@@ -12987,9 +12987,9 @@ const todayAnswerTextSpeltOut = document.querySelector(".spelt-out");
 
 function getTodayAnswer() {
   let answer = answers[startingIndex - dateDifference];
-  todayAnswerTextSpeltOut.textContent = `${answer.charAt(0)} ${answer.charAt(
+  todayAnswerTextSpeltOut.textContent = `${answer.charAt(0)}: ${answer.charAt(
     1
-  )} ${answer.charAt(2)} ${answer.charAt(3)} ${answer.charAt(4)}`;
+  )}: ${answer.charAt(2)}: ${answer.charAt(3)}: ${answer.charAt(4)}`;
   todayAnswerText.textContent = `${answer}`;
 }
 
