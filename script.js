@@ -12980,13 +12980,16 @@ const currentDate = new Date();
 
 const startingIndex = 420;
 
-const dateDifference = date.getDate() - currentDate.getDate();
+const dateDifferenceInMilliseconds = date.getTime() - currentDate.getTime();
+
+const dateDifference =
+  Math.ceil(dateDifferenceInMilliseconds / (1000 * 3600 * 24)) + 1;
 
 const todayAnswerText = document.querySelector(".answer");
 const todayAnswerTextSpeltOut = document.querySelector(".spelt-out");
 
 function getTodayAnswer() {
-  let answer = answers[startingIndex - dateDifference];
+  let answer = answers[startingIndex + Math.abs(dateDifference) + 1];
   todayAnswerTextSpeltOut.textContent = `${answer.charAt(0)}: ${answer.charAt(
     1
   )}: ${answer.charAt(2)}: ${answer.charAt(3)}: ${answer.charAt(4)}`;
